@@ -14,11 +14,11 @@ class AssetController extends Controller {
 
     public function index() {
         $assets = $this->service->getAllAssets();
-        return view('Asset::assets.index', compact('assets'));
+        return view('asset::index', compact('assets'));
     }
 
     public function create() {
-        return view('Asset::assets.create');
+        return view('asset::create');
     }
 
     public function store(Request $request) {
@@ -32,17 +32,17 @@ class AssetController extends Controller {
         ]);
 
         $this->service->storeAsset($data);
-        return redirect()->route('Asset::assets.index')->with('success', 'Aset Berhasil Disimpan!');
+        return redirect()->route('asset::index')->with('success', 'Aset Berhasil Disimpan!');
     }
 
     public function show($id) {
         $asset = $this->service->getAssetById($id);
-        return view('Asset::assets.show', compact('asset'));
+        return view('asset::show', compact('asset'));
     }
 
     public function edit($id) {
         $asset = $this->service->getAssetById($id);
-        return view('Asset::assets.edit', compact('asset'));
+        return view('asset::edit', compact('asset'));
     }
 
     public function update(Request $request, $id) {
@@ -55,11 +55,11 @@ class AssetController extends Controller {
         ]);
 
         $this->service->updateAsset($id, $data);
-        return redirect()->route('Asset::assets.index')->with('success', 'Aset Berhasil Diupdate!');
+        return redirect()->route('asset::index')->with('success', 'Aset Berhasil Diupdate!');
     }
 
     public function destroy($id) {
         $this->service->deleteAsset($id);
-        return redirect()->route('Asset::assets.index')->with('success', 'Aset Berhasil Dihapus!');
+        return redirect()->route('asset::index')->with('success', 'Aset Berhasil Dihapus!');
     }
 }

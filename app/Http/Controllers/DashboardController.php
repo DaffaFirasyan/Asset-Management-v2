@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Modules\Asset\Models\Asset;
+use Modules\Asset\Models\Asset;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller

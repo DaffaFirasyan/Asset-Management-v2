@@ -1,4 +1,4 @@
-@extends('ChatBot::layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Tambah Aset Baru')
 @section('subtitle', 'Daftarkan aset baru ke dalam sistem inventaris')
